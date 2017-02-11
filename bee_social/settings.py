@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'bee_app.apps.BeeAppConfig'
+    'bee_app.apps.BeeAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,7 +77,9 @@ WSGI_APPLICATION = 'bee_social.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.path.join(BASE_DIR, 'db.mysql'),
+        'NAME': 'bee_social',
+        'USER': 'root',
+        'PASSWORD': 'fltkm'
     }
 }
 

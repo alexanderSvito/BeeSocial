@@ -127,3 +127,6 @@ STATIC_URL = '/static/'
 
 # Authentification
 LOGIN_REDIRECT_URL = 'index'
+
+# File uploads
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

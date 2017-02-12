@@ -8,3 +8,7 @@ def index(request):
 @login_required(login_url='/login/')
 def test(request):
     return HttpResponse("Test successeded.")
+
+@login_required(login_url='/login/')
+def messages(request):
+    return render(request, 'messages/index.html')

@@ -127,6 +127,7 @@ STATIC_URL = '/static/'
 
 # Authentification
 LOGIN_REDIRECT_URL = 'index'
+AUTH_USER_MODEL = 'bee_app.User'
 
 # File uploads
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

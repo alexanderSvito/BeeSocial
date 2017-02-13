@@ -56,7 +56,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'bee_app/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -126,8 +127,12 @@ STATIC_URL = '/static/'
 
 
 # Authentification
+
 LOGIN_REDIRECT_URL = 'index'
+
 AUTH_USER_MODEL = 'bee_app.User'
 
+
 # File uploads
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

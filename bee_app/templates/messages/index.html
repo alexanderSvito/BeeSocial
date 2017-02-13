@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}BeeSocial!{% endblock %}
-<script type="text/javascript" src="/bee_app/static/javascript/angular.min.js"></script>
-<script type="text/javascript" src="/bee_app/static/javascript/index.js"></script>
 
 {% block content %}
+
+<script type="text/javascript" src="{% static 'javascript/angular.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
   <h2>Messages</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+  <div ng-app="MessageApp">
+  	<div ng-controller="MessageController">
+  		<div>
+  			{% for dialog in request.dialogs %}
+  				<div ng-click="MessageService.getMessages({{dialog.id}})">
+  					<p> {{ dialog.name }} </p>
+  				</div>
+  			{% endfor %}
+  		</div>
+      {% verbatim %}
+      {{ MessageService.countMessages() }}
+  		<messages-list></messages-list>
+      {% endverbatim %}
+  	</div>
+  </div>
 {% endblock %}

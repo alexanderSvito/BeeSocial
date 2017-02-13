@@ -4,7 +4,11 @@ from django.contrib.auth.models import AbstractUser
 
 class Dialog(models.Model):
 	"""docstring for Dialog"""
+	name = models.CharField(max_length=140)
 	started_at = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return self.name
 
 class User(AbstractUser):
 	"""docstring for User"""
@@ -22,6 +26,6 @@ class Account(models.Model):
 class Message(models.Model):
 	"""docstring for Message"""
 	dialog = models.ForeignKey(Dialog, related_name="messages", on_delete=models.CASCADE)
-	user = models.ForeignKey(User, related_name="messages", on_delete=models.CASCADE)
+	author = models.ForeignKey(User, related_name="messages", on_delete=models.CASCADE)
 	text = models.CharField(max_length=256)
 	sent_at = models.DateTimeField(auto_now_add=True)

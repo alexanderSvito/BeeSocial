@@ -10,5 +10,10 @@
 			{% block content %}
 			{% endblock %}
 		</div>
+		{% if debug %}
+			<footer>
+				{{ request }}
+			</footer>
+		{% endif %}
 	</body>
 </html>

@@ -30,14 +30,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'bee_app.apps.BeeAppConfig',
+INSTALLED_APPS = [ 
+    'message.apps.MessageConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', 
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'bee_app/templates'),
+            os.path.join(BASE_DIR, 'message/templates'),
+            os.path.join(BASE_DIR, 'users/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -130,9 +133,21 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'index'
 
-AUTH_USER_MODEL = 'bee_app.User'
+AUTH_USER_MODEL = 'users.User'
 
 
 # File uploads
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
+# Channels managment
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+        "ROUTING": "message.routing.channel_routing",
+    },
+}

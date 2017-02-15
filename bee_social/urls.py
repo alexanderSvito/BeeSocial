@@ -15,14 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-	url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
-    url(r'^register/$', views.register, name='register'),
-    url(r'^register/complete/$', views.registration_complete, name='registration_complete'),
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('bee_app.urls'))
+    url(r'^$', views.index, name='index'),
+    url(r'^', include('users.urls')),
+    url(r'^message/', include('message.urls')),
+    url(r'^admin/', admin.site.urls),  
 ]

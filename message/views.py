@@ -14,7 +14,7 @@ def dialogs(request):
     request.dialogs = request.user.dialogs.all()
     return render(request, 'index.html')
 
-@login_required(login_url='/login/')
+@login_required(login_url='/login/')	
 def messages(request, id):
     arr = request.user.dialogs.get(id=id).messages.all()
     return JsonResponse(jsonfy_messages(arr), safe=False)

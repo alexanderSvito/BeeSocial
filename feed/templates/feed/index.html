@@ -1,0 +1,12 @@
+<ul>
+{% for post in posts %}
+	<h3>{{ post.user.username }}</h3>
+	<h6>{{ post.started_at }}</h6>	
+    <p>{{ post.text }}</p>
+{% endfor %}
+{% for post in other_posts %}
+	<h3>{{ post.user.username }}</h3>
+	<h6>{{ post.started_at }}</h6>	
+    <p>{{ post.text }}</p>
+{% endfor %}
+</ul>

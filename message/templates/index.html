@@ -5,10 +5,9 @@
 {% block title %}BeeSocial!{% endblock %}
 
 {% block content %}
-
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/messages.css' %}">
 <script type="text/javascript" src="{% static 'javascript/angular.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
-  <h2>Messages</h2>
   <div ng-app="MessageApp">
   	<div ng-controller="MessageController">
   		<div>
@@ -18,11 +17,12 @@
   				</div>
   			{% endfor %}
   		</div>
+      <div class="">
       {% verbatim %}
         {{ MessageService.countMessages() }}
   		  <messages-list></messages-list>
       {% endverbatim %}
-      
+      </div>
   	</div>
   </div>
 {% endblock %}

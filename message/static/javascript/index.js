@@ -11,7 +11,7 @@ angular.module("MessageApp", [])
 	that.getMessages = function(id){
 		return $http({
 			method: "get",
-			url: "/messages/" + id
+			url: "/message/" + id
 		}).then(function(response){
 			that.messages = response.data;
 			console.log(response.data);

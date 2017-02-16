@@ -1,0 +1,33 @@
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	background: #fbfefe;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+header, footer {
+	background: #ffd11a;
+	color: #ffffff;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+header > b {
+	font-size: 1.5em;
+}
+div.logo {
+	font-family: 'Yellowtail', cursive;
+	font-size: 2em;
+}
+img.logo {
+	height: 6em;
+}
+
+.content {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}

@@ -3,17 +3,15 @@
 <html>
 	<head>
 		<title>{% block title %}{% endblock %}</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat|Yellowtail" rel="stylesheet">		
+		<link rel="stylesheet" href="{% static 'stylesheets/app.css' %}"></link>
 	</head>
 	<body>
-		<header>This is temporary</header>
-		<div>
+		{% include "components/header.html" %}
+		<div class="content">
 			{% block content %}
 			{% endblock %}
 		</div>
-		{% if debug %}
-			<footer>
-				{{ request }}
-			</footer>
-		{% endif %}
+		{% include "components/footer.html" %}
 	</body>
 </html>

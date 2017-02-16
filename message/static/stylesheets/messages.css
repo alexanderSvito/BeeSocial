@@ -1,0 +1,18 @@
+div.dialogs {
+	margin: 2em;
+}
+div.dialogs p {
+	margin: 2em;
+}
+.dialog:hover {
+	background: #ffffff;
+	font-weight: bold;
+	cursor: pointer;
+}
+.message {
+	width: 40em;
+	border: 3px solid #d3caed;
+	margin: 1em;
+	padding: 1em;
+	background: white;
+}

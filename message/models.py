@@ -8,6 +8,9 @@ class Dialog(models.Model):
 	started_at = models.DateTimeField(auto_now_add=True)
 	participants = models.ManyToManyField(User, related_name="dialogs")
 
+	def preview(self):
+		return self.messages.reverse()[0].text
+
 	def __str__(self):
 		return self.name
 	
@@ -17,3 +20,9 @@ class Message(models.Model):
 	author = models.ForeignKey(User, related_name="messages", on_delete=models.CASCADE)
 	text = models.CharField(max_length=256)
 	sent_at = models.DateTimeField(auto_now_add=True)
+
+	def as_json(self):
+		return {'author': str(self.author), 'text': self.text, 'sent_at': self.sent_at}
+
+	def __str__(self):
+		return "Msg from %s: %s" % (self.author, self.text)

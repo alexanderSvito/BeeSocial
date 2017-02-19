@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [ 
     'message.apps.MessageConfig',
     'users.apps.UsersConfig',
+    'feed.apps.FeedConfig' ,
     'django.contrib.admin',
     'django.contrib.auth', 
     'django.contrib.contenttypes',
@@ -85,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bee_social',
         'USER': 'root',
-        'PASSWORD': 'fltkm'
+        'PASSWORD': 'tvbytv'
     }
 }
 

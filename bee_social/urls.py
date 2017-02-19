@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^', include('users.urls')),
     url(r'^message/', include('message.urls')),
-    url(r'^admin/', admin.site.urls),  
+    url(r'^admin/', admin.site.urls),
+    url(r'^feed/', include('feed.urls')),  
 ]

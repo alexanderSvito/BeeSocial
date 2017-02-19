@@ -1,0 +1,31 @@
+{%  extends 'content.html' %}
+
+{% load staticfiles %}
+
+{% block title %}BeeSocial!{% endblock %}
+
+{% block container %}
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/posts.css' %}">
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <div class="post-username">{{ post.user.username }}</div>
+                <div class="post-text">{{ post.text }}</div>
+                <div class="post-date">{{ post.started_at }}</div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+    <div class="other_posts">
+        {% for post in other_posts %}
+            <div class="_other_post">
+                <div class="post-username">{{ post.user.username }}</div>
+                <div class="post-text">{{ post.text }}</div>
+                <div class="post-date">{{ post.started_at }}</div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

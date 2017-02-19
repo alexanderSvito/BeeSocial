@@ -1,0 +1,25 @@
+.posts {
+	width: 75%;
+}
+.post {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background: white;
+	border-left: 6px solid #d3caed;
+	padding: 0.5em 1em 1em 1em;
+}
+
+.post-username {
+	font-weight: bolder;
+	padding-bottom: 0.5em;
+}
+
+.post:hover {
+	background: #d3caed;
+	cursor: pointer;
+}
+
+.post-date {
+	color: grey;
+	text-align: right;
+}

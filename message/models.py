@@ -11,6 +11,9 @@ class Dialog(models.Model):
 	def preview(self):
 		return self.messages.reverse()[0].text
 
+	def as_json(self):
+		return {"name": self.name, "preview": self.preview(), "id": self.id}
+
 	def __str__(self):
 		return self.name
 	

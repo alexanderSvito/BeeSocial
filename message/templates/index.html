@@ -11,12 +11,7 @@
   <div ng-app="MessageApp" class="fillable">
   	<div ng-controller="MessageController" class="container">
     		<div class="dialogs">
-    			{% for dialog in request.dialogs %}
-    				<div ng-click="MessageService.getMessages({{dialog.id}})" class="dialog">
-    					<div class="dialog-name">{{ dialog.name }}</div>
-              <div class="dialog-preview">{{ dialog.preview }}</div>
-    				</div>
-    			{% endfor %}
+    				<dialog-list></dialog-list>
     		</div>
         <div class="messages">
           {% verbatim %}

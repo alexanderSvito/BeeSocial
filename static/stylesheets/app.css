@@ -1,3 +1,9 @@
+@keyframes appearence {
+    from {background-color: trasparent;}
+    to {background-color: #d3caed;}
+}
+
+
 body {
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
@@ -7,8 +13,6 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-
-
 header {
 	background: #ffd11a;
 	color: #ffffff;
@@ -49,8 +53,10 @@ li {
 	align-items: center;
 	list-style: none;
 }
+
 li:hover {
-	background: #d3caed;
+	animation-name: appearence;
+    animation-duration: 0.7s;
 }
 a {
 	margin-bottom: 0.5em;
@@ -60,3 +66,4 @@ li > img {
 	height: 32px;
 	margin: 0.5em 1em 0.5em 0.5em;
 }
+

@@ -17,7 +17,8 @@
 	color: grey;
 }
 .dialog:hover {
-	background: #d3caed;
+	animation-name: appearence;
+    animation-duration: 0.7s;
 	cursor: pointer;
 }
 .messages {
@@ -43,3 +44,4 @@
 	color: grey;
 	text-align: right;
 }
+

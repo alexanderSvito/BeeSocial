@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from forms import RegistrationForm
 from django.views.decorators.csrf import csrf_protect
    
@@ -8,8 +8,7 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/register/complete')
-
+            return redirect('registration_complete')
     else:
         form = RegistrationForm()
     token = {}

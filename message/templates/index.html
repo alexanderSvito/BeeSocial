@@ -1,28 +1,28 @@
-{% extends 'base.html' %}
+{% extends 'content.html' %}
 
 {% load static %}
 
 {% block title %}BeeSocial!{% endblock %}
 
-{% block content %}
+{% block container %}
 <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/messages.css' %}">
 <script type="text/javascript" src="{% static 'javascript/angular.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
-  <div ng-app="MessageApp">
-  	<div ng-controller="MessageController">
-  		<div>
-  			{% for dialog in request.dialogs %}
-  				<div ng-click="MessageService.getMessages({{dialog.id}})">
-  					<p> {{ dialog.name }} </p>
-  				</div>
-  			{% endfor %}
-  		</div>
-      <div class="">
-      {% verbatim %}
-        {{ MessageService.countMessages() }}
-  		  <messages-list></messages-list>
-      {% endverbatim %}
-      </div>
+  <div ng-app="MessageApp" class="fillable">
+  	<div ng-controller="MessageController" class="container">
+    		<div class="dialogs">
+    			{% for dialog in request.dialogs %}
+    				<div ng-click="MessageService.getMessages({{dialog.id}})" class="dialog">
+    					<div class="dialog-name">{{ dialog.name }}</div>
+              <div class="dialog-preview">{{ dialog.preview }}</div>
+    				</div>
+    			{% endfor %}
+    		</div>
+        <div class="messages">
+          {% verbatim %}
+      		  <messages-list></messages-list>
+          {% endverbatim %}
+        </div>
   	</div>
   </div>
 {% endblock %}

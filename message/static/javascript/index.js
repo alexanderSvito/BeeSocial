@@ -25,6 +25,12 @@ angular.module("MessageApp", [])
 })
 .directive("messageItem", function(){
 	return {
-		template: `<div><h3>{{ message.author }}</h3>{{ message.text }}</div>`
+		template:  `<div class="message">
+						<div class="message-text">{{ message.text }}</div>
+						<div class="message-info">
+							<span class="message-author">{{ message.author }}</span>
+							<span class="message-date">{{ message.sent_at|date:'shortTime' }}</span>
+						</div>
+					</div>`
 	}
 })

@@ -1,0 +1,45 @@
+.dialogs {
+	width: 25%;
+}
+.dialog {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background: white;
+	border-left: 6px solid #d3caed;
+	padding: 0.5em 1em 1em 1em;
+}
+.dialog-name {
+	font-weight: bolder;
+	padding-bottom: 0.5em;
+}
+.dialog-preview {
+	font-style: italic;
+	color: grey;
+}
+.dialog:hover {
+	background: #d3caed;
+	cursor: pointer;
+}
+.messages {
+	width: 75%;
+}
+.message {
+	border-bottom: 3px solid #d3caed;
+	margin: 1em;
+	padding: 1em;
+	background: white;
+}
+.message-author {
+	font-style: italic;
+}
+.message-info {
+	color: grey;
+	text-align: right;
+}
+.message-text {
+	color: #3b3b3b;
+}
+.message-date {
+	color: grey;
+	text-align: right;
+}

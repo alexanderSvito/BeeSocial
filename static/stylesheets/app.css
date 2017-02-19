@@ -8,15 +8,17 @@ a {
 	color: inherit;
 }
 
-header, footer {
+
+header {
 	background: #ffd11a;
 	color: #ffffff;
-	display: flex;
+	display: flex !important;
+	border-bottom: #fff700 solid 5px;
 	justify-content: space-around;
 	align-items: center;
 }
 header > b {
-	font-size: 1.5em;
+	font-size: 1.9em;
 }
 div.logo {
 	font-family: 'Yellowtail', cursive;
@@ -25,9 +27,36 @@ div.logo {
 img.logo {
 	height: 6em;
 }
-
+.container {
+	display: flex;
+	margin-left: 2em;
+	margin-right: 2em;
+}
 .content {
 	display: flex;
-	justify-content: space-around;
+	width: 80%;
+	justify-content: space-between;
 	align-items: flex-start;
+}
+.navbar {
+	width: 20%;
+}
+.fillable {
+	width: 100%;
+}
+li {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+li:hover {
+	background: #d3caed;
+}
+a {
+	margin-bottom: 0.5em;
+}
+li > img {
+	width: 32px;
+	height: 32px;
+	margin: 0.5em 1em 0.5em 0.5em;
 }

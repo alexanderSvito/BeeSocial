@@ -7,7 +7,7 @@ class User(AbstractUser):
 	email = models.EmailField()
 	subscribtions = models.ManyToManyField("self", blank=True, symmetrical=False)
 	blacklist = models.ManyToManyField("self", blank=True)
-	
+
 		
 class Account(models.Model):
 	"""docstring for Account"""
